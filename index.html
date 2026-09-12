@@ -1,14 +1,20 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Focus Study Log - 極簡學習計時器</title>
 
-  <!-- iOS / Web App Meta Tags -->
+  <!-- iOS / Apple Add to Home Screen Web App Support -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Focus Study">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'%3E%3Crect width='180' height='180' rx='40' fill='%238b5cf6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='100'%3E⏱️%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#8b5cf6">
+  
+  <!-- iOS Touch Icon (180x180 high-res SVG data URI) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'%3E%3Crect width='180' height='180' rx='40' fill='%238b5cf6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='100'%3E⏱️%3C/text%3E%3C/svg%3E">
+  
+  <!-- Web App Manifest for Full Screen Add to Home Screen Support -->
+  <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Focus%20Study%20Log%22%2C%22short_name%22%3A%22Focus%20Study%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%238b5cf6%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20180%20180%27%20width%3D%27180%27%20height%3D%27180%27%253E%253Crect%20width%3D%27180%27%20height%3D%27180%27%20rx%3D%2740%27%20fill%3D%27%25238b5cf6%27%2F%253E%253Ctext%20x%3D%2750%2525%27%20y%3D%2755%2525%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-size%3D%27100%27%253E%25E2%258F%25B1%25EF%25B8%258F%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22180x180%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
  
   <style>
     /* --- CSS 變數與主題定義 --- */
@@ -66,6 +72,7 @@
       margin: 0;
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -75,6 +82,8 @@
       justify-content: center;
       min-height: 100vh;
       padding: clamp(12px, 2vw, 32px);
+      padding-top: max(clamp(12px, 2vw, 32px), env(safe-area-inset-top));
+      padding-bottom: max(clamp(12px, 2vw, 32px), env(safe-area-inset-bottom));
       transition: background-color 0.3s ease, color 0.3s ease;
       position: relative;
     }
