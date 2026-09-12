@@ -10,11 +10,11 @@
   <meta name="apple-mobile-web-app-title" content="Focus Study">
   <meta name="theme-color" content="#8b5cf6">
   
-  <!-- iOS Touch Icon (180x180 high-res SVG data URI) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'%3E%3Crect width='180' height='180' rx='40' fill='%238b5cf6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-size='100'%3E⏱️%3C/text%3E%3C/svg%3E">
+  <!-- iOS Touch Icon (Simplistic white book on purple background) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180' width='180' height='180'%3E%3Crect width='180' height='180' rx='40' fill='%238b5cf6'/%3E%3Cpath fill='%23ffffff' d='M45,45 C45,45 65,40 90,52 C115,40 135,45 135,45 L135,130 C135,130 115,125 90,137 C65,125 45,130 45,130 Z'/%3E%3Cpath stroke='%238b5cf6' stroke-width='4' stroke-linecap='round' d='M90,54 L90,135'/%3E%3C/svg%3E">
   
   <!-- Web App Manifest for Full Screen Add to Home Screen Support -->
-  <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Focus%20Study%20Log%22%2C%22short_name%22%3A%22Focus%20Study%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%238b5cf6%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20180%20180%27%20width%3D%27180%27%20height%3D%27180%27%253E%253Crect%20width%3D%27180%27%20height%3D%27180%27%20rx%3D%2740%27%20fill%3D%27%25238b5cf6%27%2F%253E%253Ctext%20x%3D%2750%2525%27%20y%3D%2755%2525%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20font-size%3D%27100%27%253E%25E2%258F%25B1%25EF%25B8%258F%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22180x180%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+  <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22Focus%20Study%20Log%22%2C%22short_name%22%3A%22Focus%20Study%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%238b5cf6%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20180%20180%27%20width%3D%27180%27%20height%3D%27180%27%253E%253Crect%20width%3D%27180%27%20height%3D%27180%27%20rx%3D%2740%27%20fill%3D%27%25238b5cf6%27%2F%253E%253Cpath%20fill%3D%27%2523ffffff%27%20d%3D%27M45%2C45%20C45%2C45%2065%2C40%2090%2C52%20C115%2C40%20135%2C45%20135%2C45%20L135%2C130%20C135%2C130%20115%2C125%2090%2C137%20C65%2C125%2045%2C130%2045%2C130%20Z%27%2F%253E%253Cpath%20stroke%3D%27%25238b5cf6%27%20stroke-width%3D%274%27%20stroke-linecap%3D%27round%27%20d%3D%27M90%2C54%20L90%2C135%27%2F%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22180x180%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
  
   <style>
     /* --- CSS 變數與主題定義 --- */
@@ -1908,11 +1908,11 @@
     function sendDesktopNotification(title, body) {
       if (!("Notification" in window)) return;
       if (Notification.permission === "granted") {
-        new Notification(title, { body: body, icon: 'https://placehold.co/128x128/8b5cf6/ffffff?text=⏱️' });
+        new Notification(title, { body: body, icon: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 180 180\' width=\'180\' height=\'180\'%3E%3Crect width=\'180\' height=\'180\' rx=\'40\' fill=\'%238b5cf6\'/%3E%3Cpath fill=\'%23ffffff\' d=\'M45,45 C45,45 65,40 90,52 C115,40 135,45 135,45 L135,130 C135,130 115,125 90,137 C65,125 45,130 45,130 Z\'/%3E%3Cpath stroke=\'%238b5cf6\' stroke-width=\'4\' stroke-linecap=\'round\' d=\'M90,54 L90,135\'/%3E%3C/svg%3E' });
       } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
           if (permission === "granted") {
-            new Notification(title, { body: body, icon: 'https://placehold.co/128x128/8b5cf6/ffffff?text=⏱️' });
+            new Notification(title, { body: body, icon: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 180 180\' width=\'180\' height=\'180\'%3E%3Crect width=\'180\' height=\'180\' rx=\'40\' fill=\'%238b5cf6\'/%3E%3Cpath fill=\'%23ffffff\' d=\'M45,45 C45,45 65,40 90,52 C115,40 135,45 135,45 L135,130 C135,130 115,125 90,137 C65,125 45,130 45,130 Z\'/%3E%3Cpath stroke=\'%238b5cf6\' stroke-width=\'4\' stroke-linecap=\'round\' d=\'M90,54 L90,135\'/%3E%3C/svg%3E' });
           }
         });
       }
